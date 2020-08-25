@@ -34,7 +34,7 @@ Python, Dash, Plotly, Heroku, Flask
 - install all of the environments needed (dash, dash_bootstrap_components, gunicorn, plotly, pandas)
 - Create file requirement text by using 'pip freeze > requirements.txt'
 - python run.py
-- http://localhost:8050/
+- Then in your browser, go to http://localhost:8050/
 
 
 ## Heroku
