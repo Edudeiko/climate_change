@@ -1,4 +1,4 @@
-# Interactive map on Climate change through the years of 2010 to 2013
+# Interactive map of Climate change through the years of 2010 to 2013
 
 You can find the project at [here](https://www.dj-helper.com/).
 
@@ -24,6 +24,12 @@ Python, Dash, Plotly, Heroku, Flask
 ### Python Notebooks
 
 [Notebooks](https://github.com/Edudeiko/climate_change/tree/master/notebooks)
+
+### Setting up the environment
+
+- conda create --name {your app name} python=3.8.5
+
+- install all of the environments needed (dash, gunicorn, plotly, pandas)
 
 ### 3️⃣ How to connect to the data API
 

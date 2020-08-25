@@ -1,10 +1,12 @@
-# Imports from 3rd party libraries
 import dash
+import matplotlib.pyplot as plt
+from plotly.tools import mpl_to_plotly
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
+import pandas as pd
 
 # Imports from this application
 from app import app
@@ -16,24 +18,29 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
-
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            ## Heart Disease Prediction
+            Keep yourself healthy :) 
+            Using the features provided you can predict a possible heart disease.
+            
+            Some of the feature explanation for ease read:
+            
+            sex — (1 = male; 0 = female),
+            
+            target — have heart disease or not (1=yes, 0=no)
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Have a heart disease?', color='primary'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
+df = pd.read_csv('assets/wrangled_data.csv')
+
+fig = px.choropleth(df, locations='Country', locationmode='country names',
+color='Average_Temp', hover_name='Country', animation_frame='Date')
+
+fig.update_layout(title_text='Average Temperature Change from 2010-01-01 to 2013-01-01', title_x = 0.5, 
+geo=dict(showframe = False, showcoastlines = False))
 
 column2 = dbc.Col(
     [
