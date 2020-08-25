@@ -28,16 +28,14 @@ Python, Dash, Plotly, Heroku, Flask
 ### Setting up the environment
 
 - conda create --name {your app name} python=3.8.5
+- pip install pipenv
+- pipenv install
+- pipenv shell
+- install all of the environments needed (dash, dash_bootstrap_components, gunicorn, plotly, pandas)
+- Create file requirement text by using 'pip freeze > requirements.txt'
+- python run.py
+- http://localhost:8050/
 
-- install all of the environments needed (dash, gunicorn, plotly, pandas)
-
-### 3️⃣ How to connect to the data API
-
-- Search for songs https://sp-search.herokuapp.com/track_search_ready/{text}
-
-- Search for songs with audio features https://sp-search.herokuapp.com/audio_features/{text}
-
-- Find similar songs https://sp-search.herokuapp.com/predict/{track_id}
 
 ## Heroku
 

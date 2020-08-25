@@ -8,6 +8,10 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
+import plotly.graph_objs as go
+from plotly.subplots import make_subplots
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+
 # Imports from this application
 from app import app
 
@@ -18,20 +22,19 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Heart Disease Prediction
-            Keep yourself healthy :) 
-            Using the features provided you can predict a possible heart disease.
+            ## Climate Change Visualization
             
-            Some of the feature explanation for ease read:
+            For informational purpose
             
-            sex — (1 = male; 0 = female),
+            By pointing at any country and by sliding over the years
+            you can see how the temperature changes.
             
-            target — have heart disease or not (1=yes, 0=no)
+            
             """
         ),
-        dcc.Link(dbc.Button('Have a heart disease?', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('How I made it?', color='primary'), href='/process')
     ],
-    md=4,
+    md=3,
 )
 
 df = pd.read_csv('assets/wrangled_data.csv')
