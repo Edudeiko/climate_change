@@ -35,6 +35,7 @@ Python, Dash, Plotly, Heroku, Flask
 - Create file requirement text by using 'pip freeze > requirements.txt'
 - python run.py
 - Then in your browser, go to http://localhost:8050/
+- Test your app locally, with Gunicorn: ``` gunicorn run:server ```
 
 
 ## Heroku
