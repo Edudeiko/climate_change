@@ -27,6 +27,7 @@ Python, Dash, Plotly, Heroku, Flask
 
 ### Setting up the environment
 
+- Check the directory first
 - conda create --name {your app name} python=3.8.5
 - pip install pipenv
 - pipenv install
@@ -35,15 +36,19 @@ Python, Dash, Plotly, Heroku, Flask
 - Create file requirement text by using 'pip freeze > requirements.txt'
 - python run.py
 - Then in your browser, go to http://localhost:8050/
-- Test your app locally, with Gunicorn: ``` gunicorn run:server ```
 
+### Make all the changes needed, than repeat the steps to check on the result
 
-## Heroku
+- python run.py
+- Then in your browser, go to http://localhost:8050/
 
-- Check the directory first
-- Create file requirement text by using 'pip freeze > requirements.txt'
+## Deploy to Heroku
+
 - pipenv shell
+- Test your app locally, with Gunicorn: ``` gunicorn run:server ```
+- Go to https://dashboard.heroku.com/new-app and give your app a name.
 - heroku login
+- heroku git:remote -a your-app-name
 - git remote -v
 - git push heroku master
 
@@ -61,7 +66,6 @@ Python, Dash, Plotly, Heroku, Flask
 
 - Add your heroku app name to the spotify app --> dashboard --> redirect URIs
 
-
-# Dash Template
+## Dash Template
 
 [Instructions](https://lambdaschool.github.io/ds/unit2/dash-template/)
