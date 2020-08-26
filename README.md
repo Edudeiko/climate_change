@@ -49,23 +49,6 @@ Python, Dash, Plotly, Heroku, Flask
 - Go to https://dashboard.heroku.com/new-app and give your app a name.
 - heroku login
 - heroku git:remote -a your-app-name
-- git remote -v
+- git add .
+- git commit -am "ready to deploy to heroku"
 - git push heroku master
-
-## Debug mode
-
-- heroku run bash
-- ---> ls -al
-- ---> exit
-- heroku config
-- heroku config:set SPOTIFY_CLIENT_ID="---------------"
-- heroku config:set SPOTIFY_CLIENT_SECRET="---------------"
-- heroku config # > to check on the changes
-
-## Important
-
-- Add your heroku app name to the spotify app --> dashboard --> redirect URIs
-
-## Dash Template
-
-[Instructions](https://lambdaschool.github.io/ds/unit2/dash-template/)
