@@ -7,15 +7,14 @@ from dash.dependencies import Input, Output
 
 # Imports from this application
 from app import app, server
-from pages import index, insights, process
+from pages import index, insights
 
 # Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
-    brand='YOUR APP NAME',
+    brand='CLIMATE CHANGE OVERVIEW',
     brand_href='/', 
     children=[ 
         dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
-        dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')), 
     ],
     sticky='top',
     color='light', 
@@ -34,11 +33,11 @@ footer = dbc.Container(
         dbc.Col(
             html.P(
                 [
-                    html.Span('Your Name', className='mr-2'), 
+                    html.Span('E. D.', className='mr-2'), 
                     html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:evgeniy.dudeyko@gmail.com'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/<you>/<repo>'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/<you>/'), 
-                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/Edudeiko/climate_change'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/ed-dudeiko/'), 
+                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/Evgenii51216603'), 
                 ], 
                 className='lead'
             )
@@ -67,8 +66,6 @@ def display_page(pathname):
         return index.layout
     elif pathname == '/insights':
         return insights.layout
-    elif pathname == '/process':
-        return process.layout
     else:
         return dcc.Markdown('## Page not found')
 

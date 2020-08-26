@@ -32,7 +32,7 @@ column1 = dbc.Col(
             
             """
         ),
-        dcc.Link(dbc.Button('How I made it?', color='primary'), href='/process')
+        dcc.Link(dbc.Button('How I made it?', color='primary'), href='/insights')
     ],
     md=3,
 )
@@ -42,7 +42,7 @@ df = pd.read_csv('assets/wrangled_data.csv')
 fig = px.choropleth(df, locations='Country', locationmode='country names',
 color='Average_Temp', hover_name='Country', animation_frame='Date')
 
-fig.update_layout(title_text='Average Temperature Change from 2010-01-01 to 2013-01-01', title_x = 0.5, 
+fig.update_layout(title_text='Average Temperature from 2010-01-01 to 2013-01-01', title_x = 0.5, 
 geo=dict(showframe = False, showcoastlines = False))
 
 column2 = dbc.Col(
