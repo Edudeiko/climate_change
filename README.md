@@ -2,7 +2,7 @@
 
 You can find deployed to Heroku project [here](https://climate-change-overview.herokuapp.com).
 
-## 2️ Project Overview
+## Project Overview
 
 Climate change web app is made for anyone interested in having a closer look at an actual proof of the changing climate over the years from 2010 to 2013. The years can be adjusted, original dataset link included.
 
@@ -10,7 +10,7 @@ Climate change web app is made for anyone interested in having a closer look at 
 
 Python, Dash, Plotly, Heroku, Flask
 
-### 2️⃣ Explanatory Variables
+### Explanatory Variables
 
 - Country
 - Date
