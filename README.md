@@ -1,6 +1,6 @@
 # Interactive map of Climate change through the years of 2010 to 2013
 
-You can find the project at [here](https://www.dj-helper.com/).
+You can find deployed to Heroku project [here](https://climate-change-overview.herokuapp.com).
 
 ## 2️ Project Overview
 
@@ -19,7 +19,7 @@ Python, Dash, Plotly, Heroku, Flask
 ### Data Sources
 
 - Original dataset can be found here [here](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data)
-- To explore more about Plotly[here](https://plotly.com/python/)
+- To explore more about Plotly [here](https://plotly.com/python/)
 
 ### Python Notebooks
 
