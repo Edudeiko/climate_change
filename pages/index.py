@@ -38,7 +38,7 @@ column1 = dbc.Col(
     md=3,
 )
 
-df = pd.read_csv('assets/wrangled_data.csv')
+df = pd.read_csv('assets/wrangled_data_final.csv')
 
 fig = px.choropleth(df, locations='Country', locationmode='country names',
 color='Average_Temp_Farenheit', hover_data=['Average_Temp_Celsius'], hover_name='Country', animation_frame='Date')
