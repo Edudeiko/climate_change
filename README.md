@@ -14,7 +14,8 @@ Python, Dash, Plotly, Heroku, Flask
 
 - Country
 - Date
-- Average_Temperature
+- Average_Temperature_Celsius
+- Average_Temperature_Farenheit
 
 ### Data Sources
 
