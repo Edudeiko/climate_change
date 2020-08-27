@@ -45,6 +45,16 @@ column1 = dbc.Col(
             print(df.shape)
             df.head()
             ```
+            ##### Creating Celsius to Farenheit function
+            ```
+            def convert_to_farenheit (c):
+                return (c*9/5)+32
+            ```
+            ##### Round up the result to 2 decimals as well
+            ```
+            df['Average_Temp_Farenheit'] = df['Average_Temp_Celsius'].apply(convert_to_farenheit).round(2)
+            df['Average_Temp_Celsius'] = df['Average_Temp_Celsius'].round(2)
+            ```
             ##### Group the dataframe by Country name and dataset
             ```
             df_sorted = df.groupby(['Country', 'Date']).sum().reset_index().sort_values(['Date'], ascending=False)
@@ -62,7 +72,9 @@ column1 = dbc.Col(
             print(df_2000.shape)
             df_2000.head()
             ```
+
             ##### Create a dataset for Climate change by timeline
+
             ```
             df_2000_by_month = df_2000.groupby(['Date','Country']).sum().reset_index()
             df_2000_by_month.head()
@@ -70,13 +82,15 @@ column1 = dbc.Col(
             ##### Visualization
             ```
             fig = px.choropleth(df_2000_by_month, locations='Country', locationmode='country names', 
-                                color='Average_Temp', hover_name='Country', animation_frame='Date')
+                                color='Average_Temp_Farenheit', hover_data=['Average_Temp_Celsius'],
+                                hover_name='Country', animation_frame='Date')
 
             fig.update_layout(title_text='Average Temperature Change from 2010-01-01 to 2013-01-01', title_x = 0.5, 
                               geo=dict(showframe = False, showcoastlines = False))
             fig.show()
             ```
             You can find the GitHub page with all the code by pressing the GitHub icon below.
+
             """
         ),
 

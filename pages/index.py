@@ -24,10 +24,11 @@ column1 = dbc.Col(
         
             ## Climate Change Visualization
             
-            For informational purpose
             
-            By pointing at any country and by sliding over the years
-            you can see how the temperature changes.
+            By pointing at any country and by sliding over the years from 2010 to 2013 
+            you can see how the average temperature changes across the globe.
+
+            Original data frame contains only Celsius metric, I created Farenheit values as well.
             
             
             """
@@ -40,15 +41,14 @@ column1 = dbc.Col(
 df = pd.read_csv('assets/wrangled_data.csv')
 
 fig = px.choropleth(df, locations='Country', locationmode='country names',
-color='Average_Temp', hover_name='Country', animation_frame='Date')
+color='Average_Temp_Farenheit', hover_data=['Average_Temp_Celsius'], hover_name='Country', animation_frame='Date')
 
-fig.update_layout(title_text='Average Temperature from 2010-01-01 to 2013-01-01', title_x = 0.5, 
-geo=dict(showframe = False, showcoastlines = False))
+fig.update_layout(geo=dict(showframe = False, showcoastlines = False), width=850, height=550)
 
 column2 = dbc.Col(
     [
         dcc.Graph(figure=fig),
-    ]
+    ],
 )
 
 layout = dbc.Row([column1, column2])

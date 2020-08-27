@@ -11,14 +11,14 @@ from pages import index, insights
 
 # Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
-    brand='CLIMATE CHANGE OVERVIEW',
+    brand='OVERVIEW',
     brand_href='/', 
     children=[ 
         dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
     ],
     sticky='top',
     color='light', 
-    light=True, 
+    light=False, 
     dark=False
 )
 
@@ -33,7 +33,7 @@ footer = dbc.Container(
         dbc.Col(
             html.P(
                 [
-                    html.Span('E. D.', className='mr-2'), 
+                    # html.Span('E. D.', className='mr-2'), 
                     html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:evgeniy.dudeyko@gmail.com'), 
                     html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/Edudeiko/climate_change'), 
                     html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/ed-dudeiko/'), 
